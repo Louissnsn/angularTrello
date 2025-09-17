@@ -39,6 +39,6 @@ export class Register implements OnInit {
       return;
     }
 
-    this.router.navigateByUrl('/admin');
+    this.router.navigateByUrl('/admin'); //pour l'instant la page n'existe pas mais j'y viendrai
   }
 }
