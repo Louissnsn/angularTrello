@@ -1,1 +1,23 @@
-<p>register works!</p>
+
+<h1>Create account</h1>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label>
+    Username
+    <input type="text" formControlName="username" />
+  </label>
+  <div *ngIf="submitted && form.get('username')?.invalid" class="error">
+    Username is required (min 3).
+  </div>
+
+  <label>
+    Password
+    <input type="password" formControlName="password" />
+  </label>
+  <div *ngIf="submitted && form.get('password')?.invalid" class="error">
+    Password is required (min 6).
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Register</button>
+  <p *ngIf="error" class="error">{{ error }}</p>
+</form>
